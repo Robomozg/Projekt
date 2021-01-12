@@ -12,6 +12,7 @@ namespace Projekt_Alfa
     class Ekwipunek
     {
         List<Przedmiot> lista = new List<Przedmiot>();
+        string ttest_penisa;
         public Ekwipunek(string path_eq)
         {
             string[] dane = File.ReadAllLines(path_eq);
