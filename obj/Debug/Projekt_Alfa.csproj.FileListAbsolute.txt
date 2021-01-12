@@ -1,0 +1,12 @@
+C:\Users\Blue\source\repos\Projekt_Alfa\bin\Debug\Projekt_Alfa.exe.config
+C:\Users\Blue\source\repos\Projekt_Alfa\bin\Debug\Projekt_Alfa.exe
+C:\Users\Blue\source\repos\Projekt_Alfa\bin\Debug\Projekt_Alfa.pdb
+C:\Users\Blue\source\repos\Projekt_Alfa\obj\Debug\Projekt_Alfa.csprojAssemblyReference.cache
+C:\Users\Blue\source\repos\Projekt_Alfa\obj\Debug\Projekt_Alfa.Properties.Resources.resources
+C:\Users\Blue\source\repos\Projekt_Alfa\obj\Debug\Projekt_Alfa.csproj.GenerateResource.cache
+C:\Users\Blue\source\repos\Projekt_Alfa\obj\Debug\Projekt_Alfa.csproj.CoreCompileInputs.cache
+C:\Users\Blue\source\repos\Projekt_Alfa\obj\Debug\Projekt_Alfa.exe
+C:\Users\Blue\source\repos\Projekt_Alfa\obj\Debug\Projekt_Alfa.pdb
+C:\Users\Blue\source\repos\Projekt_Alfa\obj\Debug\Projekt_Alfa.MainMenu.resources
+C:\Users\Blue\source\repos\Projekt_Alfa\obj\Debug\Projekt_Alfa.Tworzenie_Postaci.resources
+C:\Users\Blue\source\repos\Projekt_Alfa\obj\Debug\Projekt_Alfa.Lokacja.resources
