@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.IO;
 
+dupa dupa test
+
 namespace Projekt_Alfa
 {
     class Ekwipunek
