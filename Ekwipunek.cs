@@ -15,8 +15,8 @@ namespace Projekt_Alfa
         public Ekwipunek(string path_eq)
         {
             string[] dane = File.ReadAllLines(path_eq);
-            string imagePath = path_eq.Remove(path_eq.LastIndexOf('/')+1);
-            foreach(string linia in dane)
+            string imagePath = path_eq.Remove(path_eq.LastIndexOf('/') + 1);
+            foreach (string linia in dane)
             {
                 string[] dane_przed = linia.Split(';');
                 switch (dane_przed[0])
@@ -30,7 +30,16 @@ namespace Projekt_Alfa
                     case "jedz":
                         lista.Add(new Jadalny(dane_przed, imagePath));
                         break;
-                } 
+                    case "narz":
+                        lista.Add(new Narzedzia(dane_przed, imagePath));
+                        break;
+                    case "ubra":
+                        lista.Add(new Ubrania(dane_przed, imagePath));
+                        break;
+                    case "bro":
+                        lista.Add(new Bronie(dane_przed, imagePath));
+                        break;
+                }
             }
         }
         public void Zapisz(string path_eq)
@@ -44,7 +53,7 @@ namespace Projekt_Alfa
         }
         public void Wyswietl()
         {
-            
+
         }
     }
 }
