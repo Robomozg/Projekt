@@ -108,8 +108,8 @@ namespace Projekt_Alfa
 
         public Narzedzia(string[] vs, string path) : base(vs, path)
         {
-            wymaganaSila = Convert.ToInt32(vs[11]);
-            wykorzystanieEnergii = Convert.ToInt32(vs[12]);
+            wymaganaSila = Convert.ToInt32(vs[8]);
+            wykorzystanieEnergii = Convert.ToInt32(vs[9]);
         }
 
         public override void Zapisz(string path_eq)
@@ -129,8 +129,8 @@ namespace Projekt_Alfa
 
         public Ubrania(string[] vs, string path) : base(vs, path)
         {
-            cieplo = Convert.ToInt32(vs[13]);
-            pojemnosc = Convert.ToInt32(vs[14]);
+            cieplo = Convert.ToInt32(vs[8]);
+            pojemnosc = Convert.ToInt32(vs[9]);
         }
         public override void Zapisz(string path_eq)
         {
@@ -149,8 +149,8 @@ namespace Projekt_Alfa
 
         public Bronie(string[] vs, string path) : base(vs, path)
         {
-            moc = Convert.ToInt32(vs[15]);
-            pojemnoscMagazynku = Convert.ToInt32(vs[16]);
+            moc = Convert.ToInt32(vs[8]);
+            pojemnoscMagazynku = Convert.ToInt32(vs[9]);
         }
         public override void Zapisz(string path_eq)
         {
