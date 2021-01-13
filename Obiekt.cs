@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,6 +35,7 @@ namespace Projekt_Alfa
             panel.BackgroundImage = obraz;
             panel.Height = obraz.Height;
             panel.Width = obraz.Width;
+            panel.BackColor = Color.FromArgb(0, Color.Black);
         }
     }
     class Pojemnik : Obiekt
