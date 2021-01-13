@@ -27,6 +27,7 @@ namespace Projekt_Alfa
             this.BackgroundImage = Image.FromFile(path+"background.png");
             obiekty = new List<Obiekt>();
             WczytajObiekty();
+
         }
         private void WczytajObiekty()
         {
@@ -46,6 +47,7 @@ namespace Projekt_Alfa
                 }
                 this.Controls.Add(obiekty[i].Panel);
                 i++;
+                //obiekty nie mogą się nakładać bo wtedy przezroczystość się pierdoli
             }
         }
     }
