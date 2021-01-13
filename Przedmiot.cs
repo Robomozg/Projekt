@@ -34,7 +34,7 @@ namespace Projekt_Alfa
             ilosc = Convert.ToInt32(vs[3]);
             iloscMAX = Convert.ToInt32(vs[4]);
             opis = vs[5];
-            obraz = Image.FromFile(path+image_path);
+            obraz = Image.FromFile(path+Image_path);
         }
         public virtual void Zapisz(string path_eq)
         {
@@ -57,6 +57,7 @@ namespace Projekt_Alfa
             File.AppendAllText(path_eq, $"{wlasciciel}");
         }
     }
+   
     class NieFabularny : Przedmiot
     {
         protected int wartosc;
@@ -97,5 +98,64 @@ namespace Projekt_Alfa
             File.AppendAllText(path_eq, $";{ZwrotEnergii};{zwrotH2O};{zwrotJedzenia}");
         }
     }
+    class Narzedzia : NieFabularny
+    {
+        private int wymaganaSila;
+        private int wykorzystanieEnergii;
 
+        public int WymaganaSila { get => wymaganaSila; protected set => wymaganaSila = value; }
+        public int WykorzystanieEnergii { get => wykorzystanieEnergii; protected set => wykorzystanieEnergii = value; }
+
+        public Narzedzia(string[] vs, string path) : base(vs, path)
+        {
+            wymaganaSila = Convert.ToInt32(vs[11]);
+            wykorzystanieEnergii = Convert.ToInt32(vs[12]);
+        }
+
+        public override void Zapisz(string path_eq)
+        {
+            base.Zapisz(path_eq);
+            File.AppendAllText(path_eq, $";{wymaganaSila};{wykorzystanieEnergii}");
+        }
+    }
+    class Ubrania : NieFabularny
+    {
+        private int cieplo;
+        private int pojemnosc;
+
+        public int Cieplo { get => cieplo; protected set => cieplo = value; }
+
+        public int Pojemnosc { get => pojemnosc; protected set => pojemnosc = value; }
+
+        public Ubrania(string[] vs, string path) : base(vs, path)
+        {
+            cieplo = Convert.ToInt32(vs[13]);
+            pojemnosc = Convert.ToInt32(vs[14]);
+        }
+        public override void Zapisz(string path_eq)
+        {
+            base.Zapisz(path_eq);
+            File.AppendAllText(path_eq, $";{cieplo};{pojemnosc}");
+        }
+    }
+    class Bronie : NieFabularny
+    {
+        private int moc;
+        private int pojemnoscMagazynku;
+
+        public int Moc { get => moc; protected set => moc = value; }
+
+        public int PojemnoscMagazynku { get => pojemnoscMagazynku; protected set => pojemnoscMagazynku = value; }
+
+        public Bronie(string[] vs, string path) : base(vs, path)
+        {
+            moc = Convert.ToInt32(vs[15]);
+            pojemnoscMagazynku = Convert.ToInt32(vs[16]);
+        }
+        public override void Zapisz(string path_eq)
+        {
+            base.Zapisz(path_eq);
+            File.AppendAllText(path_eq, $";{moc};{pojemnoscMagazynku}");
+        }
+    }
 }
