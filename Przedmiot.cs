@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +26,7 @@ namespace Projekt_Alfa
         public int IloscMAX { get => iloscMAX; }
         public string Opis { get => opis; protected set => opis = value; }
 
-        public Przedmiot(string[] vs)
+        public Przedmiot(string[] vs, string path)
         {
             typ = vs[0];
             image_path = vs[1];
@@ -34,7 +34,7 @@ namespace Projekt_Alfa
             ilosc = Convert.ToInt32(vs[3]);
             iloscMAX = Convert.ToInt32(vs[4]);
             opis = vs[5];
-            obraz = Image.FromFile(image_path);
+            obraz = Image.FromFile(path+image_path);
         }
         public virtual void Zapisz(string path_eq)
         {
@@ -46,7 +46,7 @@ namespace Projekt_Alfa
         protected string wlasciciel;
         public string Wlasciciel { get => wlasciciel; protected set => wlasciciel = value; }
 
-        public Fabularny(string[] vs) : base(vs)
+        public Fabularny(string[] vs, string path) : base(vs, path)
         {
             wlasciciel = vs[6];
         }
@@ -64,7 +64,7 @@ namespace Projekt_Alfa
         public int Wartosc { get => wartosc; protected set => wartosc = value; }
         public double Waga { get => waga; protected set => waga = value; }
 
-        public NieFabularny(string[] vs) : base(vs)
+        public NieFabularny(string[] vs, string path) : base(vs, path)
         {
             wartosc = Convert.ToInt32(vs[6]);
             waga = Convert.ToDouble(vs[7]);
@@ -85,7 +85,7 @@ namespace Projekt_Alfa
         public int ZwrotH2O { get => zwrotH2O; protected set => zwrotH2O = value; }
         public int ZwrotJedzenia { get => zwrotJedzenia; protected set => zwrotJedzenia = value; }
 
-        public Jadalny(string[] vs) : base(vs)
+        public Jadalny(string[] vs, string path) : base(vs, path)
         {
             zwrotEnergii = Convert.ToInt32(vs[8]);
             zwrotH2O = Convert.ToInt32(vs[9]);
