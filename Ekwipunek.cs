@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,19 +15,21 @@ namespace Projekt_Alfa
         public Ekwipunek(string path_eq)
         {
             string[] dane = File.ReadAllLines(path_eq);
+            string imagePath = path_eq.Remove(path_eq.LastIndexOf('/'));
+            imagePath += "/";
             foreach(string linia in dane)
             {
                 string[] dane_przed = linia.Split(';');
                 switch (dane_przed[0])
                 {
                     case "fab":
-                        lista.Add(new Fabularny(dane_przed));
+                        lista.Add(new Fabularny(dane_przed, imagePath));
                         break;
                     case "nfab":
-                        lista.Add(new NieFabularny(dane_przed));
+                        lista.Add(new NieFabularny(dane_przed, imagePath));
                         break;
                     case "jedz":
-                        lista.Add(new Jadalny(dane_przed));
+                        lista.Add(new Jadalny(dane_przed, imagePath));
                         break;
                 } 
             }
