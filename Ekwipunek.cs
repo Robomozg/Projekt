@@ -15,8 +15,7 @@ namespace Projekt_Alfa
         public Ekwipunek(string path_eq)
         {
             string[] dane = File.ReadAllLines(path_eq);
-            string imagePath = path_eq.Remove(path_eq.LastIndexOf('/'));
-            imagePath += "/";
+            string imagePath = path_eq.Remove(path_eq.LastIndexOf('/')+1);
             foreach(string linia in dane)
             {
                 string[] dane_przed = linia.Split(';');
