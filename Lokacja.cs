@@ -17,20 +17,20 @@ namespace Projekt_Alfa
         {
             InitializeComponent();
             this.Name = nazwa;
+            PredatorMasturbator = new Protagonista();
         }
         string path;
         List<Obiekt> obiekty;
+        public static Protagonista PredatorMasturbator;
         private void Lokacja_Load(object sender, EventArgs e)
         {
-
-            path = "data/" + this.Name + "/";
-            this.BackgroundImage = Image.FromFile(path+"background.png");
-            obiekty = new List<Obiekt>();
             WczytajObiekty();
-
         }
         private void WczytajObiekty()
         {
+            path = "data/" + this.Name + "/";
+            this.BackgroundImage = Image.FromFile(path + "background.png");
+            obiekty = new List<Obiekt>();
             string[] dane = File.ReadAllLines(path+"obiekty.txt");
             int i = 0;
             foreach (string linia in dane)
@@ -43,6 +43,9 @@ namespace Projekt_Alfa
                         break;
                     case "npc":
                         obiekty.Add(new NPC(dane_obiektu, path));
+                        break;
+                    case "hand":
+                        obiekty.Add(new Handlarz(dane_obiektu, path));
                         break;
                 }
                 this.Controls.Add(obiekty[i].Panel);
