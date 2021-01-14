@@ -51,9 +51,16 @@ namespace Projekt_Alfa
                 File.AppendAllText(path_eq, Environment.NewLine);
             }
         }
-        public void Wyswietl()
+        public string[] Wyswietl()
         {
-
+            string[] vs = new string[lista.Count];
+            int i = 0;
+            foreach(Przedmiot przedmiot in lista)
+            {
+                vs[i] = przedmiot.Wyswietl();
+                i++;
+            }
+            return vs;
         }
     }
 }
