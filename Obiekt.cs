@@ -23,15 +23,15 @@ namespace Projekt_Alfa
         internal Ekwipunek Ekwipunek { get => ekwipunek; }
         public Panel Panel => panel;
 
-        public Obiekt(string[] dane, string path)
+        public Obiekt(string[] dane)
         {
             typ = dane[0];
             nazwa = dane[1];
             imagePath = dane[2];
-            obraz = Image.FromFile(path+dane[2]);
+            obraz = Image.FromFile(Lokacja.Path + dane[2]);
             panel = new Panel();
             panel.Location = new Point(Convert.ToInt32(dane[3]), Convert.ToInt32(dane[4]));
-            if (dane[5] != "") ekwipunek = new Ekwipunek(path+dane[5]);
+            if (dane[5] != "") ekwipunek = new Ekwipunek(Lokacja.Path+dane[5]);
             panel.BackgroundImage = obraz;
             panel.Height = obraz.Height;
             panel.Width = obraz.Width;
@@ -40,7 +40,7 @@ namespace Projekt_Alfa
     }
     class Pojemnik : Obiekt
     {
-        public Pojemnik(string[] dane, string path) : base(dane, path)
+        public Pojemnik(string[] dane) : base(dane)
         {
             panel.Click += this.Wymiana;
         }
@@ -53,9 +53,9 @@ namespace Projekt_Alfa
     {
         protected string talkPath;
         protected Rozmowa form;
-        public NPC(string[] dane, string path) : base(dane, path)
+        public NPC(string[] dane) : base(dane)
         {
-            talkPath = dane[6];
+            talkPath = Lokacja.Path+dane[6];
             panel.Click += this.Rozmawiaj;
         }
         public virtual void Rozmawiaj(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace Projekt_Alfa
     }
     class Handlarz : NPC
     {
-        public Handlarz(string[] dane, string path) : base(dane, path)
+        public Handlarz(string[] dane) : base(dane)
         {
 
         }
