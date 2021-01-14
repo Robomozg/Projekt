@@ -51,14 +51,40 @@ namespace Projekt_Alfa
     }
     class NPC : Obiekt
     {
-        string talkPath;
+        protected string talkPath;
+        protected Rozmowa form;
         public NPC(string[] dane, string path) : base(dane, path)
         {
-            panel.Click += this.Rozmowa;
+            talkPath = dane[6];
+            panel.Click += this.Rozmawiaj;
         }
-        public void Rozmowa(object sender, EventArgs e)
+        public virtual void Rozmawiaj(object sender, EventArgs e)
+        {
+            form = new Rozmowa(talkPath, obraz);
+            form.Show();
+        }
+    }
+    class Handlarz : NPC
+    {
+        public Handlarz(string[] dane, string path) : base(dane, path)
         {
 
+        }
+        public override void Rozmawiaj(object sender, EventArgs e)
+        {
+            base.Rozmawiaj(sender,e);
+            Button handel = new Button();
+            handel.Height = 50;
+            handel.Width = 50;
+            handel.Location = new Point(50, 50);
+            handel.Click += this.Handluj;
+            form.Controls.Add(handel);
+            form.Show();
+        }
+        protected void Handluj(object sender, EventArgs e)
+        {
+            Wymiana wym = new Wymiana(ekwipunek);
+            wym.Show();
         }
     }
 }
